@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Token from './pages/Token.jsx';
+import Quiz from './pages/Quiz.jsx';
+import Wallet from './pages/Wallet.jsx';
+import About from './pages/About.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      <header className="nav">
+        <div className="nav-left">
+          <div className="logo-mark">
+            <span>G</span>
+          </div>
+          <div className="logo-text">
+            <span className="logo-main">Geek Protocol</span>
+            <span className="logo-tagline">All Hope. No Hype.</span>
+          </div>
+          <span className="kaspa-pill">Powered by Kaspa</span>
+        </div>
+
+        <div className="nav-right">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/token">Token</NavLink>
+          <NavLink to="/quiz">Quiz</NavLink>
+          <NavLink to="/wallet">Wallet</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </div>
+      </header>
+
+      <main className="page">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/token" element={<Token />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
