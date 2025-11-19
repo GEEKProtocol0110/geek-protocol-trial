@@ -1,0 +1,8 @@
+export default function Home() {
+  return (
+    <section>
+      <h1>Geek Protocol</h1>
+      <p>Welcome to the hub for geeks: learn, play, and earn with Quiz2Earn.</p>
+    </section>
+  );
+}
