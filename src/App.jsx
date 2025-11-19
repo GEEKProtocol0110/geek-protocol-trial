@@ -13,10 +13,12 @@ function App() {
           <div className="logo-mark">
             <span>G</span>
           </div>
+
           <div className="logo-text">
             <span className="logo-main">Geek Protocol</span>
             <span className="logo-tagline">All Hope. No Hype.</span>
           </div>
+
           <span className="kaspa-pill">Powered by Kaspa</span>
         </div>
 
